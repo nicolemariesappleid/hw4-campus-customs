@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Customs | Live App Check</title>
+  <style>
+    :root { color-scheme: light; --ink: #201b20; --paper: #f4eee5; --muted: #625a5b; --line: #d8cec2; --red: #842036; --gold: #bd8a51; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    main { width: min(100% - 36px, 960px); margin: 0 auto; padding: 46px 0 70px; }
+    header { padding: 0 0 24px; border-bottom: 2px solid var(--ink); margin-bottom: 30px; }
+    .eyebrow { margin: 0 0 8px; color: var(--red); font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { margin: 0; font: 44px/1.05 Georgia, "Times New Roman", serif; }
+    .lede { max-width: 680px; margin: 14px 0 0; color: var(--muted); }
+    section { padding: 24px 0 30px; border-bottom: 1px solid var(--line); }
+    h2 { margin: 0 0 12px; font: 29px/1.15 Georgia, "Times New Roman", serif; }
+    figure { margin: 16px 0 0; }
+    img { display: block; width: min(100%, 560px); height: auto; border: 1px solid var(--line); background: #e6dfd6; box-shadow: 0 8px 24px rgba(35, 25, 25, .12); }
+    figcaption { max-width: 720px; margin-top: 11px; color: var(--muted); }
+    .fact { color: var(--red); font-weight: 700; }
+    footer { padding-top: 22px; color: var(--muted); font-size: 13px; }
+    @media (max-width: 600px) { main { width: min(100% - 28px, 960px); padding-top: 30px; } h1 { font-size: 36px; } h2 { font-size: 25px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Campus Customs · Homework 4</p>
+      <h1>Live App Check</h1>
+      <p class="lede">Evidence captured from the running storefront and API. Each screenshot documents one requested shopper workflow.</p>
+    </header>
+
+    <section aria-labelledby="inventory-check">
+      <h2 id="inventory-check">1. Chat checks inventory by size</h2>
+      <figure>
+        <img src="app_check_images/inventory.png" alt="Product detail for the 2025 Yale versus Harvard T-shirt with chat reply stating two units are in stock in size L">
+        <figcaption>The shopper asks how many of the current shirt are available in size L. The chat answers <span class="fact">2 units in stock</span>; the database inventory row for this product and size also records quantity 2.</figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="dynamic-results-check">
+      <h2 id="dynamic-results-check">2. Category question returns product cards</h2>
+      <figure>
+        <img src="app_check_images/search-cards.png" alt="Chat response to what hoodies do you have, followed by three hoodie product cards">
+        <figcaption>Asking “What hoodies do you have?” returns three dynamically selected, database-hydrated product cards beneath the assistant reply. Each card shows product imagery, name, and price and links to that item’s product detail page.</figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="filters-check">
+      <h2 id="filters-check">3. Updated product category filters</h2>
+      <figure>
+        <img src="app_check_images/filters.png" alt="Product collection page with the T-shirts category selected and matching shirt cards displayed">
+        <figcaption>The collection uses the simplified clothing categories. Selecting <span class="fact">T-shirts</span> filters the catalogue to matching items and updates the result count; the remaining category controls stay available above the cards.</figcaption>
+      </figure>
+    </section>
+
+    <footer>Checked against the local Campus Customs storefront and SQLite-backed FastAPI service. Screenshot paths are relative to this file for reliable double-click viewing.</footer>
+  </main>
+</body>
+</html>

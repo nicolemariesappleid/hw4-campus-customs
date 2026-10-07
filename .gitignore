@@ -1,0 +1,34 @@
+# --- Secrets: never commit real keys ---
+.env
+.env.*
+!.env.example
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# --- Local-only data pack (course database + product images) ---
+data/
+*.db
+*.sqlite
+*.sqlite3
+
+# --- Python ---
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# --- Node / Vite ---
+node_modules/
+frontend/dist/
+*.tsbuildinfo
+*.local
+
+# --- Audit trail scratch files (the trail itself, output/audit_trail.json, is committed) ---
+output/audit_trail.json.tmp
+output/audit_trail.unreadable-*.json
+
+# --- OS / editor ---
+.DS_Store
+.vscode/
+.idea/
